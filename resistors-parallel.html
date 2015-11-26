@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Word Problem Generator</title>
+	</head>
+	<body onload="generate()">
+		<p><output id="name"></output> put a <output id="res1"></output> ohm and a <output id="res2"></output> ohm resistor in parallel. What single resistance is equivalent to this combination, in ohms?</p>
+		<label>Your answer: <input type="text" id="answer"></label>
+		<button type="submit" onclick="check(answer.value)">Submit</button>
+		<script src="common.js"></script>
+		<script>
+			var name1 = document.getElementById('name');
+			var res1 = document.getElementById('res1');
+			var res2 = document.getElementById('res2');
+			function generate() {
+				name1.innerHTML = names[randInt(0, 5)];
+				res1.innerHTML = randInt(1, 10);
+				res2.innerHTML = randInt(1, 10);
+			}
+			function check(answer) {
+				var reduced = reduce((res1.innerHTML * res2.innerHTML), (+res1.innerHTML + +res2.innerHTML));
+				var solution = reduced[0] + '/' + reduced[1];
+				if (answer == solution || answer == reduced[0]/reduced[1]) {
+					alert('Correct!');
+				} else {
+					alert('No, the correct answer was ' + solution + '.');
+				}
+			}
+		</script>
+	</body>
+</html>

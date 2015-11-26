@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Word Problem Generator</title>
+	</head>
+	<body onload="generate()">
+		<p><output id="name"></output> put a <output id="cap1"></output> farad and a <output id="cap2"></output> farad capacitor in series. What single capacitance is equivalent to this combination, in farads?</p>
+		<label>Your answer: <input type="text" id="answer"></label>
+		<button type="submit" onclick="check(answer.value.match(/\d+/))">Submit</button>
+		<script src="common.js"></script>
+		<script>
+			var name1 = document.getElementById('name');
+			var cap1 = document.getElementById('cap1');
+			var cap2 = document.getElementById('cap2');
+			function generate() {
+				name1.innerHTML = names[randInt(0, 5)];
+				cap1.innerHTML = randInt(1, 8);
+				cap2.innerHTML = randInt(1, 8);
+			}
+			function check(answer) {
+				var solution = +cap1.innerHTML + +cap2.innerHTML;
+				if (answer == solution) {
+					alert('Correct!');
+				} else {
+					alert('No, the correct answer was ' + solution);
+				}
+			}
+		</script>
+	</body>
+</html>

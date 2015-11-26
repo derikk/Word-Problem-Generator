@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Word Problem Generator</title>
+	</head>
+	<body onload="generate()">
+		<p><output id="name"></output> drew an angle in standard position with measure <output id="angle"></output> degrees. In which quadrant does the terminal side of this angle lie?</p>
+		<label>Your answer: <input type="text" id="answer"></label>
+		<button type="submit" onclick="check(answer.value.match(/\d+/))">Submit</button>
+		<script src="common.js"></script>
+		<script>
+			var name1 = document.getElementById('name');
+			var angle = document.getElementById('angle');
+			function generate() {
+				name1.innerHTML = names[randInt(0, 5)];
+				angle.innerHTML = randInt(1, 89) + randInt(1, 10) * 90;
+			}
+			function check(answer) {
+				var solution = Math.floor(angle.innerHTML / 90) % 4 + 1
+				if (answer == solution) {
+					alert('Correct!');
+				} else {
+					alert('No, the correct answer was ' + solution);
+				}
+			}
+		</script>
+	</body>
+</html>
