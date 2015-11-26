@@ -13,10 +13,11 @@
 			var angle = document.getElementById('angle');
 			function generate() {
 				name1.innerHTML = names[randInt(0, 5)];
-				angle.innerHTML = randInt(1, 89) + randInt(1, 10) * 90;
+				res1.innerHTML = randInt(1, 8);
+				res2.innerHTML = randInt(1, 8);
 			}
 			function check(answer) {
-				var solution = Math.floor(angle.innerHTML / 90) % 4 +1
+				var solution = +res1.innerHTML + +res2.innerHTML;
 				if (answer == solution) {
 					alert('Correct!');
 				} else {
