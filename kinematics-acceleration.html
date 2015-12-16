@@ -9,9 +9,9 @@
 		<button type="submit" onclick="check(answer.value)">Submit</button>
 		<script src="common.js"></script>
 		<script>
-		  	var vi = document.getElementById('vi');
-			var sec = document.getElementById('sec');
-			var m = document.getElementById('m');
+		  	var vi = parseInt(document.getElementById('vi'));
+			var sec = parseInt(document.getElementById('sec'));
+			var m = parseInt(document.getElementById('m'));
 			function generate() {
 			  vi.innerHTML = 0; //For now
 				sec.innerHTML = getRandomArbitrary(1, 15);
