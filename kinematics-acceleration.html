@@ -21,7 +21,7 @@
 				// Using d = v_{i}*t + 0.5 * a * t^2
 				var solution = 2 * (m - vi * sec) / (sec * sec);
 				solution = roundToTwo(solution);
-				if (answer == solution || roundTo(answer, 2) == solution) {
+				if (answer == solution || roundToTwo(answer) == solution) {
 					alert('Correct!');
 				} else {
 					alert('No, the correct answer was ' + solution + '.');
