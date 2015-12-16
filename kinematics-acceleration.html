@@ -9,7 +9,7 @@
 		<button type="submit" onclick="check(answer.value)">Submit</button>
 		<script src="common.js"></script>
 		<script>
-		  var vi = document.getElementById('vi');
+		  	var vi = document.getElementById('vi');
 			var sec = document.getElementById('sec');
 			var m = document.getElementById('m');
 			function generate() {
@@ -20,6 +20,7 @@
 			function check(answer) {
 				// Using d = v_{i}*t + 0.5 * a * t^2
 				var solution = 2 * (m - vi * sec) / (sec * sec);
+				alert(solution);
 				solution = roundToTwo(solution);
 				if (answer == solution || roundToTwo(answer) == solution) {
 					alert('Correct!');
