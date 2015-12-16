@@ -10,6 +10,10 @@ function getRandomArbitrary(min, max) {
     return +(Math.random() * (max - min) + min).toFixed(2);
 }
 
+function roundTo(num) {
+	return +num.toFixed(2);
+}
+
 // Reduce a fraction by finding the Greatest Common Divisor and dividing by it.
 // Credit: http://stackoverflow.com/questions/4652468/is-there-a-javascript-function-that-reduces-a-fraction
 function reduce(numerator, denominator) {
