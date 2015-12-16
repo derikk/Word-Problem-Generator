@@ -10,8 +10,9 @@ function getRandomArbitrary(min, max) {
     return +(Math.random() * (max - min) + min).toFixed(2);
 }
 
-function roundTo(num, to) {
-	return +num.toFixed(to);
+// TODO: Generify
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
 }
 
 // Reduce a fraction by finding the Greatest Common Divisor and dividing by it.
