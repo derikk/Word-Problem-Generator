@@ -9,9 +9,12 @@
 		<button type="submit" onclick="check(answer.value)">Submit</button>
 		<script src="common.js"></script>
 		<script>
-		  	var vi = parseInt(document.getElementById('vi'));
-			var sec = parseInt(document.getElementById('sec'));
-			var m = parseInt(document.getElementById('m'));
+		  	var vi = document.getElementById('vi');
+			var sec = document.getElementById('sec');
+			var m = document.getElementById('m');
+			var vi_v = parseInt(vi);
+			var sec_v = parseInt(sec);
+			var m_v = parseInt(m);
 			function generate() {
 			  vi.innerHTML = 0; //For now
 				sec.innerHTML = getRandomArbitrary(1, 15);
@@ -19,7 +22,7 @@
 			}
 			function check(answer) {
 				// Using d = v_{i}*t + 0.5 * a * t^2
-				var solution = 2 * (m - vi * sec) / (sec * sec);
+				var solution = 2 * (m_v - vi_v * sec_v) / (sec_v * sec_v);
 				alert(solution);
 				solution = roundToTwo(solution);
 				if (answer == solution || roundToTwo(answer) == solution) {
