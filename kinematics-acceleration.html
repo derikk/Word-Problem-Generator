@@ -1,0 +1,32 @@
+!DOCTYPE html>
+<html>
+	<head>
+		<title>Word Problem Generator</title>
+	</head>
+	<body onload="generate()">
+		<p>A car starts from <output id="vi"></output> m/s and accelerates uniformly over a time of <output id="sec"></output> seconds for a distance of <output id="m"></output> m. Determine the acceleration of the car, rounded to 2 decimal places. </p>
+		<label>Your answer: <input type="text" id="answer"></label>
+		<button type="submit" onclick="check(answer.value)">Submit</button>
+		<script src="common.js"></script>
+		<script>
+		  var vi = document.getElementById('vi');
+			var sec = document.getElementById('sec');
+			var m = document.getElementById('m');
+			function generate() {
+			  vi.innerHTML = 0; //For now
+				sec.innerHTML = getRandomArbitrary(1, 15);
+				m.innerHTML = randInt(30, 200);
+			}
+			function check(answer) {
+				// Using d = v_{i}*t + 0.5 * a * t^2
+				var solution = 2 * (m - vi * sec) / (sec * sec);
+				solution = roundTo(solution, 2);
+				if (answer == solution || roundTo(answer, 2) == solution) {
+					alert('Correct!');
+				} else {
+					alert('No, the correct answer was ' + solution + '.');
+				}
+			}
+		</script>
+	</body>
+</html>
