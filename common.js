@@ -4,7 +4,8 @@ function randInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-//Get a random arbitrary number, rounded to 2 decimal digits
+// Get a random arbitrary number, rounded to 2 decimal digits
+// Credit: http://stackoverflow.com/a/12830454
 function getRandomArbitrary(min, max) {
     return +(Math.random() * (max - min) + min).toFixed(2);
 }
